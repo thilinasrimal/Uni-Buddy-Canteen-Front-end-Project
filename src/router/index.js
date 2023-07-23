@@ -4,6 +4,7 @@ import Home from "../components/Home.vue";
 import CanteenSignIn from "../components/Canteen/CanteenSignIn.vue";
 import StudentSignIn from "../components/Student/StudentSignIn.vue";
 import StaffMemberSignIn from "../components/Staff Member/StaffMemberSignIn.vue";
+import CanteenSignUp from "../components/Canteen/CanteenSignUp.vue";
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path:'/staffMember-sign=in',
       name:'StaffMemberSignIn',
       component:StaffMemberSignIn,
-    }
+    },
+    {
+      path:'/canteen-sign-up',
+      name:'CanteenSignUp',
+      component:CanteenSignUp,
+    },
   ]
 })

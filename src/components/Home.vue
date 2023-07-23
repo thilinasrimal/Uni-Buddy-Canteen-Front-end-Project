@@ -1,6 +1,6 @@
 <template>
   <div class="homePage">
-    <NavBar></NavBar>
+    <NavBar :disabled="disabled"></NavBar>
       <div class="backContainer">
         <img src="../assets/Images/backImage.webp" height="450" width="450"/>
       </div>
@@ -90,6 +90,7 @@ import NavBar from "../sharedComponents/HomeNavBar/navBar.vue";
 
 export default {
   name: 'Home',
+  props:['disabled'],
   components: {NavBar, SelectCard},
   data() {
     return {
@@ -120,15 +121,8 @@ export default {
 .homePage {
   background: orangered;
 }
-.logo{
-  height: auto;
-  width: 260px;
-}
+
 
 @media screen and (max-width: 768px) {
-  .logo{
-    height: auto;
-    width: 550px;
-  }
 }
 </style>
