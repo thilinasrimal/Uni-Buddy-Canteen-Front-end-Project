@@ -1,68 +1,79 @@
 <template>
   <div class="homePage">
-    <div class="container">
+    <NavBar></NavBar>
       <div class="backContainer">
         <img src="../assets/Images/backImage.webp" height="450" width="450"/>
       </div>
-      <div class="card-container">
-        <SelectCard
-          :id="1"
-          text="Canteen"
-          :clickFunc="
+      <div class="card-container columns">
+        <div class="column">
+          <SelectCard
+            :id="1"
+            text="Canteen"
+            :clickFunc="
                 () => {
                   $router.push({
-                  name:''
+                  name:'CanteenSignIn'
                   });
                 }
               "
-          :imageSource="
+            :imageSource="
                 nowHovering === 1 || selected === 1 ? ownerIconLO : ownerIcon
               "
-          imageAlternativeText="owner Icon"
-          imageWidth="75px"
-          :hovering="hovering"
-          :selected="selected"
-          :select="select"
-        />
-        <SelectCard
-          :id="2"
-          text="Student"
-          :clickFunc="
+            imageAlternativeText="owner Icon"
+            imageWidth="75px"
+            :hovering="hovering"
+            :selected="selected"
+            :select="select"
+          />
+        </div>
+
+        <div class="column">
+          <SelectCard
+            :id="2"
+            text="Student"
+            :clickFunc="
                 () => {
                   $router.push({
-                  name:''
+                  name:'StudentSignIn'
                   });
                 }
               "
-          :imageSource="
+            :imageSource="
                 nowHovering === 2 || selected === 2 ? studentIconLO : studentIcon
               "
-          imageAlternativeText="student Icon"
-          imageWidth="75px"
-          :hovering="hovering"
-          :selected="selected"
-          :select="select"
-        />
-        <SelectCard
-          :id="3"
-          text="Staff Member"
-          :clickFunc="
+            imageAlternativeText="student Icon"
+            imageWidth="95px"
+            :hovering="hovering"
+            :selected="selected"
+            :select="select"
+          />
+        </div>
+
+        <div class="column">
+          <SelectCard
+            :id="3"
+            text="Staff Member"
+            :clickFunc="
                 () => {
                   $router.push({
-                  name:''
+                  name:'StaffMemberSignIn'
                   });
                 }
               "
-          :imageSource="
+            :imageSource="
                 nowHovering === 3 || selected === 3 ? staffIconLO : staffIcon
               "
-          imageAlternativeText="staff Icon"
-          imageWidth="75px"
-          :hovering="hovering"
-          :selected="selected"
-          :select="select"
-        />
+            imageAlternativeText="staff Icon"
+            imageWidth="75px"
+            :hovering="hovering"
+            :selected="selected"
+            :select="select"
+          />
+        </div>
+
       </div>
+    <div class="footer has-text-centered-desktop has-text-centered-mobile is-paddingless bg-is-warning">
+      <p>Copyright ©2023 Thilina Srimal. All Rights Reserved </p>
     </div>
   </div>
 </template>
@@ -75,10 +86,11 @@ import studentIconLO from "../assets/Icons/studentIconLO.webp"
 import studentIcon from "../assets/Icons/studentIcon.webp"
 import staffIconLO from "../assets/Icons/staffIconLO.webp"
 import staffIcon from "../assets/Icons/staffIcon.webp"
+import NavBar from "../sharedComponents/HomeNavBar/navBar.vue";
 
 export default {
   name: 'Home',
-  components: {SelectCard},
+  components: {NavBar, SelectCard},
   data() {
     return {
       nowHovering: 0,
@@ -107,5 +119,16 @@ export default {
 <style scoped>
 .homePage {
   background: orangered;
+}
+.logo{
+  height: auto;
+  width: 260px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo{
+    height: auto;
+    width: 550px;
+  }
 }
 </style>
