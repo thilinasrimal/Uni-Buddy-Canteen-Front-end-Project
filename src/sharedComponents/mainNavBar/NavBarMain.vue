@@ -26,6 +26,9 @@
             <img style="margin-top: -0.2rem" src="../../assets/Icons/order.png" height="18" width="18"/>
             Orders
           </a>
+          <a class="nav-link">
+            <exit-btn></exit-btn>
+          </a>
         </div>
       </div>
     </div>
@@ -33,8 +36,11 @@
 </template>
 
 <script>
+import ExitBtn from "../buttons/exitBtn.vue";
+
 export default {
   name: 'NavBarMain',
+  components: {ExitBtn},
 
 }
 </script>
@@ -53,6 +59,11 @@ export default {
   margin-top: 4.8rem;
 }
 
+.navbar-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 @media screen and (max-width: 768px) {
   .logo {
@@ -71,7 +82,11 @@ export default {
   .navbar-toggler {
     margin-top: -3rem;
   }
-
+  .navbar-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .navbar-collapse{
     background: rgba(239, 234, 226, 0.91);
   }

@@ -1,97 +1,96 @@
 <template>
-  <div class="loginPage">
+  <div>
     <NavBar></NavBar>
-    <b-notification
-      auto-close
-      v-model="isActive"
-      id="alert"
-      type="is-danger is-light"
-      aria-close-label="Close notification"
-      role="alert">
-      Username or Password is invalid!
-    </b-notification>
-
     <div class="login-container">
       <div class="BackImage">
         <div class="title">
           <h1>Welcome to</h1>
-          <h1><b>Student Sign In !</b></h1>
+          <h1><b>Student Sign Up !</b></h1>
         </div>
         <div>
-          <img src="../../assets/Images/student-log-in.png" height="400" width="400"/>
+          <img src="../../assets/Images/Sign up-pana.png" height="400" width="400"/>
         </div>
       </div>
       <div class="container-login">
         <div>
-          <h1><b style="font-family: 'Century Gothic'">Sign In</b></h1>
+          <h1><b style="font-family: 'Century Gothic'">Sign Up</b></h1>
         </div>
 
-        <!--            Username-->
+
         <form @submit.prevent class="is-flex is-flex-direction-column is-align-items-center">
+
           <div class="form-group">
-            <label class="form-label" style="float: left">Username</label>
-            <b-input required type="email" class="input-login" id="email" aria-describedby="emailHelp"
-                     placeholder="Enter Username Here" v-model="username"
+            <label class="form-label" style="float: left">Student Name</label>
+            <b-input class="input-login" id="studentName" required
+                     placeholder="Student Name" v-model="student_name"
             ></b-input>
           </div>
-          <!--          Password-->
+
+          <div class="form-group">
+            <label class="form-label" style="float: left">Registration Number</label>
+            <b-input class="input-login" id="registerNo" required
+                     placeholder="Your Registration Number"
+                     v-model="regiter_no"></b-input>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" style="float: left">Contact Number</label>
+            <b-input class="input-login" id="contactNumber" required
+                     placeholder="Contact Number" maxlength="10" typeof="mobile"
+                     v-model="contact_number"></b-input>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" style="float: left">Username / Email</label>
+            <b-input type="email" class="input-login" id="email" required
+                     placeholder="example@gmail.com"
+                     v-model="email"></b-input>
+          </div>
+
           <div class="form-group">
             <label class="form-label" style="float: left">Password</label>
-            <b-input required type="password" class="input-login" id="password" password-reveal
-                     placeholder="Enter Password Here"
+            <b-input type="password" class="input-login" id="canteenCode" required password-reveal
+                     placeholder="Enter a Password"
                      v-model="password"></b-input>
           </div>
+
         </form>
-        <b-button @click="handleSubmit" :disabled="isActive" type="button" class="btn btn-outline-dark">SIGN IN
+        <b-button  type="button" class="btn btn-outline-dark" @click="signUp">SIGN UP
         </b-button>
 
         <div class="signUp">
-          <p style="color: #070707; font-weight: 600">Don't You Have and Account?</p>
-          <b-button class="btn btn-outline-dark" @click="signUp">Sign Up</b-button>
+          <p style="color: #070707; font-weight: 600">Do You Already Have an Account?</p>
+          <b-button class="btn btn-outline-dark" @click="goToSignIn">SIGN IN</b-button>
         </div>
       </div>
     </div>
+
     <div class="footer has-text-centered-desktop has-text-centered-mobile is-paddingless bg-is-warning">
       <p>Copyright ©2023 Thilina Srimal. All Rights Reserved </p>
     </div>
   </div>
-
 </template>
 
 <script>
 import NavBar from "../../sharedComponents/HomeNavBar/navBar.vue";
 
 export default {
-  name: 'StudentSignIn',
+  name:'StudentEdit',
   components: {NavBar},
-  data() {
-    return {
-      username: '',
-      password: '',
-      isActive: false,
-    }
-  },
-  methods: {
-    handleSubmit: function () {
-      if (this.username && this.password) {
-        this.$router.push({
-          name:'StudentHome'
-        })
-      } else {
-        this.isActive = true;
-      }
+  methods:{
+    goToSignIn() {
+      this.$router.push({
+        name:'StudentHome'
+      })
     },
     signUp(){
-      this.$router.push({
-        name:'StudentSignUp'
-      })
+
     }
   }
 }
 </script>
 
 <style scoped>
-
 h1 {
   font-family: "Century Gothic";
 }
@@ -125,13 +124,13 @@ h1 {
   padding-inline-end: 8%;
   border-radius: 1rem;
   border: none;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   width: 100%;
 }
 
 .container-login label {
   color: black;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .container-login h1 {
@@ -147,7 +146,7 @@ form {
 
 .form-group {
   width: 80%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
 }
 
 .btn-outline-dark {
@@ -157,7 +156,7 @@ form {
   color: antiquewhite;
   padding: 1rem;
   margin-top: 2%;
-  width: 40%;
+  width: 35%;
   float: right;
   margin-right: 10%;
 }
@@ -169,6 +168,7 @@ form {
 .signUp{
   margin-top: 5rem;
 }
+
 @media screen and (max-width: 768px) {
   .login-container {
     display: flex;
