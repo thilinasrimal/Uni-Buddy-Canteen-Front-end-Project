@@ -71,5 +71,9 @@ export default {
   .navbar-toggler {
     margin-top: -3rem;
   }
+
+  .navbar-collapse{
+    background: rgba(239, 234, 226, 0.91);
+  }
 }
 </style>
