@@ -77,7 +77,7 @@ export default {
   methods: {
     handleSubmit: function () {
       if (this.username && this.password) {
-
+        this.$router.push({name:'CanteenHome'})
       } else {
         this.isActive = true;
       }
