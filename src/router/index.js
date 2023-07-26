@@ -10,6 +10,8 @@ import StaffMemberSignUp from "../components/Staff Member/StaffMemberSignUp.vue"
 import CanteenHomePage from "../components/Canteen/CanteenHomePage.vue";
 import StudentHome from "../components/Student/studentHome.vue";
 import StudentEdit from "../components/Student/studentEdit.vue";
+import staffMemberHome from "../components/Staff Member/StaffMemberHome.vue";
+import StaffMemberEdit from "../components/Staff Member/StaffMemberEdit.vue";
 
 Vue.use(Router)
 
@@ -66,6 +68,15 @@ export default new Router({
       name:'StudentEdit',
       component:StudentEdit
     },
-
+    {
+      path:'/staffMember-home',
+      name:'StaffMemberHome',
+      component:staffMemberHome
+    },
+    {
+      path:'/staffMember-edit',
+      name:'StaffMemberEdit',
+      component:StaffMemberEdit
+    }
   ]
 })

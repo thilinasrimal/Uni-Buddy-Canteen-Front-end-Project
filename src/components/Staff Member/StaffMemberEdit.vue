@@ -3,9 +3,9 @@
     <NavBar></NavBar>
     <div class="login-container">
       <div class="BackImage">
-                <div>
-                  <img id="image" src="../../assets/Images/Editing-body-text-pana.webp"/>
-                </div>
+        <div>
+          <img id="image" src="../../assets/Images/Editing-body-text-pana.webp"/>
+        </div>
       </div>
       <div class="container-login">
         <div>
@@ -16,14 +16,14 @@
         <form @submit.prevent class="is-flex is-flex-direction-column is-align-items-center">
 
           <div class="form-group">
-            <label class="form-label" style="float: left">Student Name</label>
+            <label class="form-label" style="float: left">Name</label>
             <b-input class="input-login" id="studentName" required
                      placeholder="Student Name" v-model="student_name"
             ></b-input>
           </div>
 
           <div class="form-group">
-            <label class="form-label" style="float: left">Registration Number</label>
+            <label class="form-label" style="float: left">Employee Number</label>
             <b-input class="input-login" id="registerNo" required
                      placeholder="Your Registration Number"
                      v-model="regiter_no"></b-input>
@@ -52,16 +52,16 @@
 
         </form>
         <div class="button-container is-flex is-flex-direction-column is-align-items-center">
-          <b-button type="button" style="background: #f6883a" class="btn-outline-dark" @click="updateProfile">UPDATE</b-button>
-          <b-button type="button" style="background: #f3c675" class="btn-outline-dark" @click="goHome">CANCEL</b-button>
+          <b-button type="button" style="background: #f6883a" class="btn-outline-dark" @click="update">UPDATE</b-button>
+          <b-button type="button" style="background: #f3c675" class="btn-outline-dark" @click="goToHome">CANCEL</b-button>
         </div>
 
+      </div>
     </div>
-  </div>
 
-  <div class="footer has-text-centered-desktop has-text-centered-mobile is-paddingless bg-is-warning">
-    <p>Copyright ©2023 Thilina Srimal. All Rights Reserved </p>
-  </div>
+    <div class="footer has-text-centered-desktop has-text-centered-mobile is-paddingless bg-is-warning">
+      <p>Copyright ©2023 Thilina Srimal. All Rights Reserved </p>
+    </div>
   </div>
 </template>
 
@@ -69,22 +69,25 @@
 import NavBar from "../../sharedComponents/HomeNavBar/navBar.vue";
 
 export default {
-  name: 'StudentEdit',
+  name: 'StaffMemberEdit',
   components: {NavBar},
   methods: {
-    goHome() {
+    goToHome() {
       this.$router.push({
-        name: 'StudentHome'
+        name: 'StaffMemberHome'
       })
     },
-    updateProfile() {
-      this.$buefy.dialog.alert('Profile Updated!')
+    update() {
+
     }
   }
 }
 </script>
 
 <style scoped>
+body{
+  transition-delay: 2000s;
+}
 h1 {
   font-family: "Century Gothic";
 }
@@ -103,7 +106,7 @@ h1 {
 }
 
 .login-container {
-  //margin-bottom: 10px;
+//margin-bottom: 10px;
   display: flex;
   flex-direction: row;
 }
@@ -179,9 +182,6 @@ form {
 
   form {
     width: 21rem;
-  }
-  .modal-card animation-content{
-   width: 82%;
   }
 }
 </style>

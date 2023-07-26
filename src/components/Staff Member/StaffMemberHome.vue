@@ -3,26 +3,26 @@
     <NavBar></NavBar>
     <div class="home-container columns">
       <div class="details is-flex is-flex-direction-column is-align-items-center mt-4 column">
-        <h1 id="Header">STUDENT PROFILE</h1>
+        <h1 id="Header">STAFF MEMBER PROFILE</h1>
         <div class="form-item is-flex is-flex-direction-row mt-6">
           <div class="items">
             <table class=" is-flex is-flex-direction-column is-align-items-start mr-4">
-              <tr id="item">REGISTRATION NO:</tr>
-              <tr id="item">STUDENT NAME:</tr>
+              <tr id="item">EMPLOYEE NO:</tr>
+              <tr id="item">NAME:</tr>
               <tr id="item">CONTACT NO:</tr>
               <tr id="item">EMAIL:</tr>
             </table>
           </div>
           <div class="details">
             <table class="is-flex is-flex-direction-column">
-              <tr id="detail">MGT/2018/354</tr>
-              <tr id="detail">THILINA SRIMAL</tr>
+              <tr id="detail">MGT01456</tr>
+              <tr id="detail">Tharanga Viraj</tr>
               <tr id="detail">071 444 5588</tr>
-              <tr id="detail">thilina3@gmail.com</tr>
+              <tr id="detail">tharanga3@gmail.com</tr>
             </table>
           </div>
         </div>
-        <b-button class="edit-Btn is-black mt-3" @click="goToEdit">EDIT PROFILE</b-button>
+        <b-button class="edit-Btn is-black mt-3" @click="edit">EDIT PROFILE</b-button>
         <b-button class="topUpBtn is-light mt-2">ORDER FOOD</b-button>
       </div>
       <div class="backImage column is-flex is-align-items-center is-flex-direction-column">
@@ -43,7 +43,7 @@
 import NavBar from "../../sharedComponents/HomeNavBar/navBar.vue";
 
 export default {
-  name: 'StudentHome',
+  name: 'StaffMemberHome',
   components: {NavBar},
   data() {
     return {
@@ -51,9 +51,9 @@ export default {
     }
   },
   methods:{
-    goToEdit(){
+    edit(){
       this.$router.push({
-        name:'StudentEdit'
+        name:'StaffMemberEdit',
       })
     }
   }

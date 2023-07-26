@@ -74,7 +74,7 @@ export default {
   methods: {
     handleSubmit: function () {
       if (this.username && this.password) {
-
+        this.$router.push({name:'StaffMemberHome'})
       } else {
         this.isActive = true;
       }
