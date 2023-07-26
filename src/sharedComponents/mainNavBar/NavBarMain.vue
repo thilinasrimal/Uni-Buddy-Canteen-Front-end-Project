@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" >
         <img src="../../assets/Icons/Plain Logo.png" alt="" width="30" height="24"
              class="logo d-inline-block align-text-top">
         <div class="header is-flex is-flex-direction-column">
@@ -14,7 +14,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link has-text-weight-bold" aria-current="page" href="#">
+          <a class="nav-link has-text-weight-bold" aria-current="page" href="/canteen-home">
             <img style="margin-top: -0.2rem" src="../../assets/Icons/home.png" height="17" width="17"/>
             Home
           </a>

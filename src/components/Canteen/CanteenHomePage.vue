@@ -14,7 +14,7 @@
             </table>
           </div>
           <div class="details">
-            <table>
+            <table class="is-flex is-flex-direction-column">
               <tr id="detail">00000001</tr>
               <tr id="detail">NIMAL MENDIS</tr>
               <tr id="detail">071 444 5588</tr>
@@ -22,7 +22,7 @@
             </table>
           </div>
         </div>
-        <b-button class="edit-Btn is-black mt-3">EDIT DETAILS</b-button>
+        <b-button class="edit-Btn is-black mt-3" @click="editDetails">EDIT DETAILS</b-button>
         <b-button class="topUpBtn is-light mt-2">TOP UP WALLETS</b-button>
       </div>
       <div class="backImage column">
@@ -46,7 +46,11 @@ export default {
       canteen_name:'CANTEEN NAME',
       canteen_code:'AA001',
       owner_name:'NIMAL MENDIS',
-
+    }
+  },
+  methods:{
+    editDetails(){
+      this.$router.push({name:'CanteenEdit'})
     }
   }
 
@@ -63,18 +67,20 @@ export default {
 .form-item{
   background: #eabe6d;
   padding: 1rem 1rem 1rem 1rem;
-  border-radius: 10px;
+  border-radius: 15px;
+  width: 500px;
+  height: 200px;
 }
 #item{
   color: #070707;
   font-weight: 600;
-  margin-bottom: 3px;
+  margin-bottom: 17px;
 }
 #detail{
   color: black;
-  border-radius: 5px;
   border-bottom: groove;
   border-bottom-color: #070707;
+  margin-bottom: 15px;
 }
 .home-container{
   display: flex;
@@ -98,6 +104,7 @@ export default {
   font-weight: 600;
   font-size: 15px;
 }
+
 @media screen and (max-width: 768px) {
   .home-container{
     display: flex;
@@ -109,5 +116,16 @@ export default {
     height: auto;
     width: 350px;
   }
+  .form-item {
+    width: 350px;
+    height: 150px;
+  }
+  #item{
+    margin-bottom: 3px;
+  }
+  #detail{
+    margin-bottom: 2px;
+  }
+
 }
 </style>

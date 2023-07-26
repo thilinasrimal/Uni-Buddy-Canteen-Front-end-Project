@@ -2,7 +2,7 @@
   <div class="homePage">
     <NavBar :disabled="disabled"></NavBar>
       <div class="backContainer">
-        <img src="../assets/Images/backImage.webp" height="450" width="450"/>
+        <img src="../assets/Images/backImage.webp" height="425" width="425"/>
       </div>
       <div class="card-container columns">
         <div class="column">
